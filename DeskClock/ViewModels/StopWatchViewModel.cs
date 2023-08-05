@@ -49,11 +49,12 @@ namespace DeskClock.ViewModels
 
 		void UpdateTimer()
 		{
-			TimerNow = timeCounter.ToString(TimerFormat);
+			//TimerNow = timeCounter.ToString(TimerFormat); converting to days after 24hrs
+			TimerNow = string.Format("{0}:{1:00}:{2:00}.{3:0}",
+				(int)timeCounter.TotalHours, timeCounter.Minutes, timeCounter.Seconds, timeCounter.Milliseconds / 100);
 		}
 
-
-		const string TimerFormat = "h':'mm':'ss'.'f";
+		//const string TimerFormat = "h':'mm':'ss'.'f";
 		readonly TimeSpan Time100Mills = TimeSpan.FromMilliseconds(100);
 		TimeSpan timeCounter = TimeSpan.Zero;
 		private readonly IDispatcherTimer dispatcherTimer;
