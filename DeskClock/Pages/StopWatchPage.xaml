@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeskClock.Pages.StopWatchPage">
+             x:Class="DeskClock.Pages.StopWatchPage"
+			 xmlns:viewModel ="clr-namespace:DeskClock.ViewModels"
+			 x:DataType="{x:Type viewModel:StopWatchViewModel}">
+
 	<Grid RowDefinitions="*, *" 
 		  ColumnDefinitions="*, *"
 		  RowSpacing="20"
 		  ColumnSpacing="20">
-		<Label Text="00:00:00.0"
-			   FontSize="70"
-			   FontAttributes="Bold"
-			   Grid.ColumnSpan="2"
-			   VerticalOptions="EndAndExpand"
-			   HorizontalOptions="CenterAndExpand"/>
-		<ImageButton Source="play.png" 
-			   VerticalOptions="Start"
-			   HorizontalOptions="EndAndExpand"
-			   Grid.Row="1"/>
-		<ImageButton Source="pause.png" 
-			   VerticalOptions="Start"
-			   HorizontalOptions="EndAndExpand"
-			   Grid.Row="1"/>
-		<ImageButton Source="reset.png"
-			   VerticalOptions="Start"
-			   HorizontalOptions="StartAndExpand"
-			   Grid.Row="1"
-			   Grid.Column="1"/>
+		<Label 
+			Text="{Binding TimeNow}"
+			FontSize="70"
+			FontAttributes="Bold"
+			Grid.ColumnSpan="2"
+			VerticalOptions="EndAndExpand"
+			HorizontalOptions="CenterAndExpand"/>
+		<ImageButton 
+			Source="play.png"
+			IsVisible="{Binding IsRunning, Converter={StaticResource InvertedBoolConverter}}"		
+			VerticalOptions="Start"
+			HorizontalOptions="EndAndExpand"
+			Grid.Row="1"/>
+		<ImageButton 
+			Source="pause.png" 
+			IsVisible="{Binding IsRunning}"		 
+			VerticalOptions="Start"
+			HorizontalOptions="EndAndExpand"
+			Grid.Row="1"/>
+		<ImageButton 
+			Source="reset.png"
+			VerticalOptions="Start"
+			HorizontalOptions="StartAndExpand"
+			Grid.Row="1"
+			Grid.Column="1"/>
 	</Grid>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using DeskClock.Pages;
+﻿using CommunityToolkit.Maui;
+using DeskClock.Pages;
 using DeskClock.ViewModels;
 using Microsoft.Extensions.Logging;
 
@@ -11,6 +12,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -19,6 +21,9 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<ClockPage>();
 		builder.Services.AddSingleton<ClockViewModel>();
+
+		builder.Services.AddSingleton<StopWatchPage>();
+		builder.Services.AddSingleton<StopWatchViewModel>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
