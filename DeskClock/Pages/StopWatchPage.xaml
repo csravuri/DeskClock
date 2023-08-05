@@ -17,21 +17,21 @@
 			VerticalOptions="EndAndExpand"
 			HorizontalOptions="CenterAndExpand"/>
 		<ImageButton 
-			Source="play.png"
+			Source="{AppThemeBinding Dark=start_white.png, Light=start_black.png}"
 			IsVisible="{Binding IsRunning, Converter={StaticResource InvertedBoolConverter}}"	
 			Command="{Binding StartCommand}"
 			VerticalOptions="Start"
 			HorizontalOptions="EndAndExpand"
 			Grid.Row="1"/>
 		<ImageButton 
-			Source="pause.png" 
+			Source="{AppThemeBinding Dark=pause_white.png, Light=pause_black.png}"
 			Command="{Binding PauseCommand}"
 			IsVisible="{Binding IsRunning}"		 
 			VerticalOptions="Start"
 			HorizontalOptions="EndAndExpand"
 			Grid.Row="1"/>
 		<ImageButton 
-			Source="reset.png"
+			Source="{AppThemeBinding Dark=reset_white.png, Light=reset_black.png}"
 			Command="{Binding ResetCommand}"
 			VerticalOptions="Start"
 			HorizontalOptions="StartAndExpand"
