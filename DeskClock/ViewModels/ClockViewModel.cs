@@ -4,7 +4,29 @@ namespace DeskClock.ViewModels
 {
 	public partial class ClockViewModel : ObservableObject
 	{
+		public ClockViewModel(IDispatcher dispatcher)
+		{
+			dispatcherTimer = dispatcher.CreateTimer();
+			dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
+			dispatcherTimer.Tick += Timer_Tick;
+			dispatcherTimer.Start();
+		}
+		readonly IDispatcherTimer dispatcherTimer;
+
+		~ClockViewModel()
+		{
+			if (dispatcherTimer != null)
+			{
+				dispatcherTimer.Tick -= Timer_Tick;
+			}
+		}
+
 		[ObservableProperty]
-		string timeNow = DateTime.Now.ToString("HH:mm:ss");
+		string timeNow;
+
+		void Timer_Tick(object sender, EventArgs e)
+		{
+			TimeNow = DateTime.Now.ToString("HH:mm:ss");
+		}
 	}
 }
