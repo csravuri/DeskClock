@@ -10,7 +10,7 @@
 		  RowSpacing="20"
 		  ColumnSpacing="20">
 		<Label 
-			Text="{Binding TimeNow}"
+			Text="{Binding TimerNow}"
 			FontSize="70"
 			FontAttributes="Bold"
 			Grid.ColumnSpan="2"
@@ -18,18 +18,21 @@
 			HorizontalOptions="CenterAndExpand"/>
 		<ImageButton 
 			Source="play.png"
-			IsVisible="{Binding IsRunning, Converter={StaticResource InvertedBoolConverter}}"		
+			IsVisible="{Binding IsRunning, Converter={StaticResource InvertedBoolConverter}}"	
+			Command="{Binding StartCommand}"
 			VerticalOptions="Start"
 			HorizontalOptions="EndAndExpand"
 			Grid.Row="1"/>
 		<ImageButton 
 			Source="pause.png" 
+			Command="{Binding PauseCommand}"
 			IsVisible="{Binding IsRunning}"		 
 			VerticalOptions="Start"
 			HorizontalOptions="EndAndExpand"
 			Grid.Row="1"/>
 		<ImageButton 
 			Source="reset.png"
+			Command="{Binding ResetCommand}"
 			VerticalOptions="Start"
 			HorizontalOptions="StartAndExpand"
 			Grid.Row="1"
