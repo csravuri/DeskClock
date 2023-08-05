@@ -27,7 +27,9 @@ namespace DeskClock.ViewModels
 
 		void Timer_Tick(object sender, EventArgs e)
 		{
-			TimeNow = DateTime.Now.ToString("HH:mm:ss");
+			TimeNow = DateTime.Now.ToString(TimeFormat);
 		}
+
+		const string TimeFormat = "HH:mm:ss";
 	}
 }
