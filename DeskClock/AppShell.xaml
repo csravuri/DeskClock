@@ -3,12 +3,25 @@
     x:Class="DeskClock.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DeskClock"
+    xmlns:localPages="clr-namespace:DeskClock.Pages"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        
+        <ShellContent 
+            Title="Timer"
+            ContentTemplate="{DataTemplate localPages:TimerPage}"
+            Route="TimerPage"/>
+
+        <ShellContent 
+            Title="Clock"
+            ContentTemplate="{DataTemplate localPages:ClockPage}"
+            Route="ClockPage"/>
+
+        <ShellContent 
+            Title="Stopwatch"
+            ContentTemplate="{DataTemplate localPages:StopWatchPage}"
+            Route="StopWatchPage"/>
+    </TabBar>
 
 </Shell>
