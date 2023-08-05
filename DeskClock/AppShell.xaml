@@ -10,16 +10,19 @@
         
         <ShellContent 
             Title="Timer"
+			Icon="timer.png"
             ContentTemplate="{DataTemplate localPages:TimerPage}"
             Route="TimerPage"/>
 
         <ShellContent 
             Title="Clock"
+			Icon="clock.png"
             ContentTemplate="{DataTemplate localPages:ClockPage}"
             Route="ClockPage"/>
 
         <ShellContent 
             Title="Stopwatch"
+			Icon="stopwatch.png"
             ContentTemplate="{DataTemplate localPages:StopWatchPage}"
             Route="StopWatchPage"/>
     </TabBar>
