@@ -4,10 +4,12 @@
              x:Class="DeskClock.Pages.ClockPage"
 			 xmlns:viewModels="clr-namespace:DeskClock.ViewModels"
 			 x:DataType="{x:Type viewModels:ClockViewModel}">
-    <VerticalStackLayout>
-        <Label 
+	<Grid>		
+        <Label
             Text="{Binding TimeNow}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+			FontSize="80"
+			FontAttributes="Bold"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" />
+	</Grid>
 </ContentPage>
