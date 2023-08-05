@@ -18,6 +18,7 @@ namespace DeskClock.ViewModels
 			if (dispatcherTimer != null)
 			{
 				dispatcherTimer.Tick -= Timer_Tick;
+				dispatcherTimer.Stop();
 			}
 		}
 
