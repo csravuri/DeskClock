@@ -5,12 +5,39 @@
 			 xmlns:viewModels="clr-namespace:DeskClock.ViewModels"
 			 xmlns:pages="clr-namespace:DeskClock.Pages"
 			 x:DataType="{x:Type viewModels:TimerViewModel}">
-    <VerticalStackLayout>
 
-
-
-
-		<Button Text="Enter time"  Command="{Binding EditTimeCommand}"/>
-
-	</VerticalStackLayout>
+	<Grid 
+		RowDefinitions="*, *" 
+		ColumnDefinitions="*, *"
+		RowSpacing="20"
+		ColumnSpacing="20">
+		<Label 
+			Text="{Binding TimerNow}"
+			FontSize="70"
+			FontAttributes="Bold"
+			Grid.ColumnSpan="2"
+			VerticalOptions="EndAndExpand"
+			HorizontalOptions="CenterAndExpand"/>
+		<ImageButton 
+			Source="{AppThemeBinding Dark=start_white.png, Light=start_black.png}"
+			IsVisible="{Binding IsRunning, Converter={StaticResource InvertedBoolConverter}}"	
+			Command="{Binding StartCommand}"
+			VerticalOptions="Start"
+			HorizontalOptions="EndAndExpand"
+			Grid.Row="1"/>
+		<ImageButton 
+			Source="{AppThemeBinding Dark=pause_white.png, Light=pause_black.png}"
+			Command="{Binding PauseCommand}"
+			IsVisible="{Binding IsRunning}"		 
+			VerticalOptions="Start"
+			HorizontalOptions="EndAndExpand"
+			Grid.Row="1"/>
+		<ImageButton 
+			Source="{AppThemeBinding Dark=reset_white.png, Light=reset_black.png}"
+			Command="{Binding ResetCommand}"
+			VerticalOptions="Start"
+			HorizontalOptions="StartAndExpand"
+			Grid.Row="1"
+			Grid.Column="1"/>
+	</Grid>
 </ContentPage>
