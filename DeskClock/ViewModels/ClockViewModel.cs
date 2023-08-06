@@ -9,6 +9,7 @@ namespace DeskClock.ViewModels
 			dispatcherTimer = dispatcher.CreateTimer();
 			dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
 			dispatcherTimer.Tick += Timer_Tick;
+			UpdateTime();
 			dispatcherTimer.Start();
 		}
 		readonly IDispatcherTimer dispatcherTimer;
@@ -26,6 +27,9 @@ namespace DeskClock.ViewModels
 		string timeNow;
 
 		void Timer_Tick(object sender, EventArgs e)
+			=> UpdateTime();
+
+		void UpdateTime()
 		{
 			TimeNow = DateTime.Now.ToString(TimeFormat);
 		}
