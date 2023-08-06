@@ -4,7 +4,7 @@ using DeskClock.Models;
 
 namespace DeskClock.ViewModels;
 
-[QueryProperty(nameof(SelectedTime), nameof(SelectedTime))]
+//[QueryProperty(nameof(SelectedTime), nameof(SelectedTime))]
 public partial class TimeSelectionViewModel : ObservableObject, IQueryAttributable
 {
 	[ObservableProperty]
