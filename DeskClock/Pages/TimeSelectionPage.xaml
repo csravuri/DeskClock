@@ -26,7 +26,7 @@
 			Grid.ColumnSpan="2"
 			Header="M"
 			NumberValue="{Binding Minutes}"
-			MaxValue="99"
+			MaxValue="59"
 			ControlTemplate="{StaticResource NumberSelectionViewTemplate}"/>
 
 		<pages:NumberSelectionView
@@ -34,7 +34,7 @@
 			Grid.ColumnSpan="2"
 			Header="S"
 			NumberValue="{Binding Seconds}"
-			MaxValue="99"
+			MaxValue="59"
 			ControlTemplate="{StaticResource NumberSelectionViewTemplate}"/>
 
 		<ImageButton 
