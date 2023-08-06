@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeskClock.Pages.TimeSelectionPage"
+             xmlns:viewModels="clr-namespace:DeskClock.ViewModels"
+			 xmlns:pages="clr-namespace:DeskClock.Pages"
+			 x:DataType="{x:Type viewModels:TimeSelectionViewModel}"
+			 Title="Select Time"
+			 Shell.PresentationMode="ModalAnimated">
+	<Grid 
+		RowDefinitions="*,*"
+		ColumnDefinitions="*,*,*,*,*,*"
+		VerticalOptions="CenterAndExpand"
+		RowSpacing="50"
+		Padding="10">
+
+		<pages:NumberSelectionView
+			Grid.ColumnSpan="2"
+			Header="H"
+			NumberValue="{Binding Hours}"
+			MaxValue="99"
+			ControlTemplate="{StaticResource NumberSelectionViewTemplate}"/>
+
+		<pages:NumberSelectionView
+			Grid.Column="2"
+			Grid.ColumnSpan="2"
+			Header="M"
+			NumberValue="{Binding Minutes}"
+			MaxValue="99"
+			ControlTemplate="{StaticResource NumberSelectionViewTemplate}"/>
+
+		<pages:NumberSelectionView
+			Grid.Column="4"
+			Grid.ColumnSpan="2"
+			Header="S"
+			NumberValue="{Binding Seconds}"
+			MaxValue="99"
+			ControlTemplate="{StaticResource NumberSelectionViewTemplate}"/>
+
+		<ImageButton 
+			Source="{AppThemeBinding Dark=close_white.png, Light=close_black.png}" 
+			Grid.Row="1"
+			Grid.ColumnSpan="3"/>
+		<ImageButton
+			Source="{AppThemeBinding Dark=done_white.png, Light=done_black.png}" 
+			Grid.Row="1"
+			Grid.Column="3"
+			Grid.ColumnSpan="3"/>
+		
+	</Grid>
+</ContentPage>

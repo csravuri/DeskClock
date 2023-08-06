@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeskClock.Pages.NumberSelectionView">
+	<ContentView.Resources>
+		<ControlTemplate x:Key="NumberSelectionViewTemplate">
+			<VerticalStackLayout BindingContext="{Binding Source={RelativeSource TemplatedParent}}">
+				<Label 
+					Text="{Binding Header}"
+					HorizontalOptions="Center" 
+					FontSize="40"
+					FontAttributes="Bold"
+					TextColor="{StaticResource Gray400}"/>
+				<Button
+					Text="+"
+					FontSize="30"
+					FontAttributes="Bold"
+					Padding="0"
+					CornerRadius="5"
+					HorizontalOptions="Center"
+					Clicked="Increment_Clicked"
+					BackgroundColor="Green"/>
+				<Label
+					Text="{Binding NumberValue}"
+					HorizontalOptions="Center" 
+					FontSize="40"
+					FontAttributes="Bold"/>
+				<Button
+					Text="-"
+					FontSize="30"
+					FontAttributes="Bold"
+					Padding="0"
+					CornerRadius="5"
+					HorizontalOptions="Center"
+					Clicked="Decrement_Clicked"
+					BackgroundColor="#a63f28"/>
+			</VerticalStackLayout>
+		</ControlTemplate>
+	</ContentView.Resources>
+    
+</ContentView>

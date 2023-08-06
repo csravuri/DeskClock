@@ -2,9 +2,9 @@ using DeskClock.ViewModels;
 
 namespace DeskClock.Pages;
 
-public partial class TimerPage : ContentPage
+public partial class TimeSelectionPage : ContentPage
 {
-	public TimerPage(TimerViewModel vm)
+	public TimeSelectionPage(TimeSelectionViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

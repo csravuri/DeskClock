@@ -25,6 +25,12 @@ public static class MauiProgram
 		builder.Services.AddSingleton<StopWatchPage>();
 		builder.Services.AddSingleton<StopWatchViewModel>();
 
+		builder.Services.AddSingleton<TimerPage>();
+		builder.Services.AddSingleton<TimerViewModel>();
+
+		builder.Services.AddSingleton<TimeSelectionPage>();
+		builder.Services.AddSingleton<TimeSelectionViewModel>();
+
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif

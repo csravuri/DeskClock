@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DeskClock.Pages.TimerPage">
+             x:Class="DeskClock.Pages.TimerPage"
+			 xmlns:viewModels="clr-namespace:DeskClock.ViewModels"
+			 xmlns:pages="clr-namespace:DeskClock.Pages"
+			 x:DataType="{x:Type viewModels:TimerViewModel}">
     <VerticalStackLayout>
-        
-    </VerticalStackLayout>
+
+
+
+
+		<Button Text="Enter time"  Command="{Binding EditTimeCommand}"/>
+
+	</VerticalStackLayout>
 </ContentPage>
