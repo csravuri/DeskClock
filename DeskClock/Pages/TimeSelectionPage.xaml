@@ -40,12 +40,14 @@
 		<ImageButton 
 			Source="{AppThemeBinding Dark=close_white.png, Light=close_black.png}" 
 			Grid.Row="1"
-			Grid.ColumnSpan="3"/>
+			Grid.ColumnSpan="3"
+			Command="{Binding CancelledCommand}"/>
 		<ImageButton
 			Source="{AppThemeBinding Dark=done_white.png, Light=done_black.png}" 
 			Grid.Row="1"
 			Grid.Column="3"
-			Grid.ColumnSpan="3"/>
+			Grid.ColumnSpan="3"
+			Command="{Binding SavedCommand}"/>
 		
 	</Grid>
 </ContentPage>

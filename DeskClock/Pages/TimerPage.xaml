@@ -7,15 +7,15 @@
 			 x:DataType="{x:Type viewModels:TimerViewModel}">
 
 	<Grid 
-		RowDefinitions="*, *" 
-		ColumnDefinitions="*, *"
+		RowDefinitions="*,*" 
+		ColumnDefinitions="*,*,*"
 		RowSpacing="20"
 		ColumnSpacing="20">
 		<Label 
 			Text="{Binding TimerNow}"
 			FontSize="70"
 			FontAttributes="Bold"
-			Grid.ColumnSpan="2"
+			Grid.ColumnSpan="3"
 			VerticalOptions="EndAndExpand"
 			HorizontalOptions="CenterAndExpand"/>
 		<ImageButton 
@@ -36,8 +36,15 @@
 			Source="{AppThemeBinding Dark=reset_white.png, Light=reset_black.png}"
 			Command="{Binding ResetCommand}"
 			VerticalOptions="Start"
-			HorizontalOptions="StartAndExpand"
+			HorizontalOptions="CenterAndExpand"
 			Grid.Row="1"
 			Grid.Column="1"/>
+		<ImageButton 
+			Source="{AppThemeBinding Dark=edit_white.png, Light=edit_black.png}"
+			Command="{Binding EditTimeCommand}"
+			VerticalOptions="Start"
+			HorizontalOptions="StartAndExpand"
+			Grid.Row="1"
+			Grid.Column="2"/>
 	</Grid>
 </ContentPage>

@@ -28,8 +28,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<TimerPage>();
 		builder.Services.AddSingleton<TimerViewModel>();
 
-		builder.Services.AddSingleton<TimeSelectionPage>();
-		builder.Services.AddSingleton<TimeSelectionViewModel>();
+		builder.Services.AddTransient<TimeSelectionPage>();
+		builder.Services.AddTransient<TimeSelectionViewModel>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

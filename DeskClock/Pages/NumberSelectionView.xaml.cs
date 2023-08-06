@@ -11,7 +11,7 @@ public partial class NumberSelectionView : ContentView
 		= BindableProperty.Create(nameof(Header), typeof(string), typeof(NumberSelectionView));
 
 	public static readonly BindableProperty NumberValueProperty
-		= BindableProperty.Create(nameof(NumberValue), typeof(int), typeof(NumberSelectionView));
+		= BindableProperty.Create(nameof(NumberValue), typeof(int), typeof(NumberSelectionView), defaultBindingMode: BindingMode.TwoWay);
 
 	public static readonly BindableProperty MaxValueProperty
 		= BindableProperty.Create(nameof(MaxValue), typeof(int), typeof(NumberSelectionView));
